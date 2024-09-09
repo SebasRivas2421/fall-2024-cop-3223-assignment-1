@@ -1,29 +1,27 @@
 {
     "version": "0.2.0",
     "configurations": [
-      {
-        "name": "Run C Program",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${workspaceFolder}/fracturing",  // Path to the compiled program
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": false,
-        "MIMode": "lldb",  // Use lldb for macOS
-        "miDebuggerPath": "/usr/bin/lldb",  // Path to lldb debugger
-        "setupCommands": [
-          {
-            "description": "Enable pretty-printing for lldb",
-            "text": "settings set target.x86-disassembly-flavor intel",
-            "ignoreFailures": true
-          }
-        ],
-        "preLaunchTask": "C/C++: gcc build active file",  // Ensure the build task is executed before launch
-        "internalConsoleOptions": "openOnSessionStart",
-        "console": "integratedTerminal"
-      }
+        {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/fracturing",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "ignoreFailures": true,
+                    "text": "-enable-pretty-printing"
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc build active file",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
     ]
-  }
-  
+}

@@ -28,7 +28,7 @@ return 0;
 
 
 double calculateDistance() {
-   static double distance;
+  double distance;
    double x1, y1, x2, y2;
    printf("Enter x1: ");
    x1 = ask_for_user_input();
@@ -53,7 +53,7 @@ double calculateDistance() {
 
 
 double calculatePerimeter() {
-  static double distance;  // Access the static 'distance'
+  double distance = calculateDistance();
   
    double radius = distance / 2.0; // Radius is half the distance between the two points
    double perimeter = 2 * PI * radius;
@@ -63,7 +63,7 @@ double calculatePerimeter() {
 
 
 double calculateArea() {
-static double distance;  // Access the static 'distance'
+double distance = calculateDistance();
 
    double radius = distance / 2.0; // Radius is half the distance between the two points
    double area = PI * pow(radius, 2);
@@ -73,7 +73,7 @@ static double distance;  // Access the static 'distance'
 
 
 double calculateWidth() {
-static double distance;  // Access the static 'distance'
+double distance = calculateDistance();
 
    double radius = distance / 2.0; // Radius is half the distance between the two points
    double width = 2 * radius; // Diameter of the circle
@@ -83,7 +83,7 @@ static double distance;  // Access the static 'distance'
 
 
 double calculateHeight() {
-static double distance;  // Access the static 'distance'
+double distance = calculateDistance();
 
    double radius = distance / 2.0; // Radius is half the distance between the two points
    double height = 2 * radius; // Diameter of the circle
